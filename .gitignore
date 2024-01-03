@@ -1,0 +1,42 @@
+#References:
+#https://microchipdeveloper.com/faq:72
+#https://github.com/toptal/gitignore/blob/master/templates/MPLabX.gitignore
+#Negate ignore of folder or file, significance of dir/ and dir/* folder ignore: https://stackoverflow.com/questions/5533050/gitignore-exclude-folder-but-include-specific-subfolder
+
+
+**/.generated_files
+**/build
+**/nbproject/Makefile-*
+**/nbproject/Package-*
+**/nbproject/private
+*.bak0
+**/disassembly
+
+#
+#START "Version control .hex and compiler library" -> use this section if you want to include build files in version control (useful for backup)
+
+#Ignore content of every configuration folder with /* ending: dist/<configname>/*
+**/dist/*/*
+
+#Negate ignore of production folder inside every configuration folder
+!**/dist/*/production
+
+#Ignore content of production folder inside every configuration folder
+**/dist/*/production/*
+
+#Negate ignore of *.hex file in production folder of every configuration folder
+!**/dist/*/production/*.hex
+#Negate ignore of *.X.A file in production folder of every configuration folder
+!**/dist/*/production/*.X.A
+
+#END "Version control .hex and compiler library"
+#
+
+#
+#START "Exclude .hex" -> use this section if you want to include build files in version control (useful for backup)
+
+#Ignore dist folder
+#**/dist
+
+#END "Exclude .hex"
+#
